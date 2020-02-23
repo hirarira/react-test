@@ -1,48 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
 import { createStore } from 'redux';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import counterReducer, { initState } from './reducer';
 
-// State
-interface state {
-	counter: number,
-	message: string
-}
-
-const defaultState:state = {
-	counter: 0,
-	message: 'COUNTER'
-}
-
-// Action
-interface action {
-	type: string,
-	text: string
-}
-
-// Reducer
-function counter(state:state = defaultState, action:action) {
-	switch(action.type){
-		case 'INCREMENT':
-			return {
-				counter: state.counter + 1,
-				message: 'INCREMENT'
-			};
-		case 'DECREMENT':
-			return {
-				counter: state.counter - 1,
-				message: 'DECREMENT'
-			};
-		default:
-			return state;
-	}
-}
-
-const store = createStore(counter);
+const store = createStore(counterReducer, initState);
 
 ReactDOM.render(
 	<Provider store={store}>

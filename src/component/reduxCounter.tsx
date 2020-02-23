@@ -1,18 +1,23 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
+
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 
-const ReduxCounter:FC = () => {
-  const increment = () => {
+export interface CounterProps {
+  count?: number,
+  decrement?: () => void,
+  increment?: () => void,
+}
 
-  };
-  const decrement = () => {
-
-  };
+const ReduxCounter:FC<CounterProps> = ({
+  count = 0,
+  increment = () => undefined,
+  decrement = () => undefined,
+}) => {
   return (
     <Box component="span" m={1}>
       <h3>Reduxカウンター</h3>
-      <h4>Count: </h4>
+      <h4>Count: {count}</h4>
       <Button
         variant="contained"
         color="primary"
