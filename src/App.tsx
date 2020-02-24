@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import FCCounter from './component/fcCounter'
-import Counter from './containers/counter'
+import ReduxCounter from './containers/reduxCounter'
 
 import './App.css';
 
@@ -10,7 +10,7 @@ const App:FC = () => {
     <div className="App">
       <header className="App-header">
         <FCCounter />
-        <Counter />
+        <ReduxCounter />
       </header>
     </div>
   );

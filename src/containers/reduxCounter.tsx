@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
 import { increment, decrement } from '../action/counter';
-import Counter from '../component/reduxCounter';
+import ReduxCounter from '../component/reduxCounter';
 import { CounterState } from '../reducer';
 
 interface StateProps {
@@ -23,4 +23,4 @@ const mapDispatchToProps = (dispatch: Dispatch):DispatchProps => ({
     increment: () => dispatch(increment()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(ReduxCounter);
