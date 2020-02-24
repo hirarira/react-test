@@ -1,3 +1,7 @@
+# hirarira Rect / Redux 勉強用
+* Redux関係はこちらからの流用です
+  * https://github.com/zalmoxisus/redux-devtools-extension#usage
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
