@@ -1,6 +1,7 @@
 export enum CounterActionType {
     DECREMENT = 'COUNTER/DECREMENT',
     INCREMENT = 'COUNTER/INCREMENT',
+    RESET = 'COUNTER/RESET'
 }
 
 export interface CounterAction {
@@ -14,4 +15,8 @@ export const decrement = (): CounterAction => ({
 
 export const increment = (): CounterAction => ({
     type: CounterActionType.INCREMENT,
+})
+
+export const reset = (): CounterAction => ({
+    type: CounterActionType.RESET,
 })

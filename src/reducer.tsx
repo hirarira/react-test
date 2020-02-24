@@ -25,6 +25,11 @@ const counterReducer: Reducer<CounterState, CounterAction> = (
 				...state,
 				count: state.count + 1,
 			};
+		case CounterActionType.RESET:
+			return {
+				...state,
+				count: 0,
+			};	
 		default: 
 			return state
 	}

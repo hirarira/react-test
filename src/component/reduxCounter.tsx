@@ -7,12 +7,14 @@ export interface CounterProps {
   count?: number,
   decrement?: () => void,
   increment?: () => void,
+  reset?: () => void,
 }
 
 const ReduxCounter:FC<CounterProps> = ({
   count = 0,
   increment = () => undefined,
   decrement = () => undefined,
+  reset = () => undefined,
 }) => {
   return (
     <Box component="span" m={1}>
@@ -31,6 +33,12 @@ const ReduxCounter:FC<CounterProps> = ({
         onClick={decrement}
       >
         DECREMENT
+      </Button>
+      <Button 
+        variant="contained"
+        onClick={reset}
+      >
+        RESET
       </Button>
     </Box>
   );

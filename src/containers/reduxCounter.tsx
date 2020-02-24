@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { increment, decrement } from '../action/counter';
+import { increment, decrement, reset } from '../action/counter';
 import ReduxCounter from '../component/reduxCounter';
 import { CounterState } from '../reducer';
 
@@ -12,6 +12,7 @@ interface StateProps {
 interface DispatchProps {
     decrement: () => void,
     increment: () => void,
+    reset: () => void,
 }
 
 const mapStateToProps = (state: CounterState): StateProps => ({
@@ -21,6 +22,7 @@ const mapStateToProps = (state: CounterState): StateProps => ({
 const mapDispatchToProps = (dispatch: Dispatch):DispatchProps => ({
     decrement: () => dispatch(decrement()),
     increment: () => dispatch(increment()),
+    reset: () => dispatch(reset()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReduxCounter);
